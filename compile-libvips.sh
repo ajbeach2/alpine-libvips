@@ -1,7 +1,7 @@
 cd /tmp && \
-git clone git://github.com/jcupitt/libvips.git && \
+git clone https://github.com/libvips/libvips.git && \
 cd /tmp/libvips && \
-git checkout v8.7.0 && \
+git checkout v8.7.4 && \
 ./autogen.sh --prefix="$HOME/libvips" --disable-magicksave --disable-magickload && \
 make && \
 make install
