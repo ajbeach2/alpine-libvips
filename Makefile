@@ -1,4 +1,5 @@
+REPO = libvips-alpine
 build:
-	docker build -t $(repo)/alpine-libvips:v8.10.5 .
+	docker build -t $(REPO)/alpine-libvips:v8.10.5 .
 push:
-	docker push $(repo)/alpine-libvips:v8.10.5
+	docker push $(REPO)/alpine-libvips:v8.10.5
