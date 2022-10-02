@@ -1,4 +1,4 @@
-FROM golang:1.15.6-alpine
+FROM golang:1.19.1-alpine3.16
 RUN mkdir /root/scripts
 ADD ./compile-libvips.sh /root/scripts/
 RUN \
@@ -8,7 +8,7 @@ RUN \
 
 RUN ~/scripts/compile-libvips.sh
 
-FROM golang:1.15.6-alpine
+FROM golang:1.19.1-alpine3.16
 RUN apk --no-cache add ca-certificates pkgconf linux-headers giflib-dev glib-dev musl-dev gcc libexif-dev libwebp-dev libpng-dev libgcc libjpeg-turbo-dev glib-dev expat-dev
 COPY --from=0 /root/libvips /root/libvips
 ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/root/libvips/lib/pkgconfig
